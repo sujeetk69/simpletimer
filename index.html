@@ -1,0 +1,38 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<style>
+p {
+  text-align: center;
+  font-size: 60px;
+}
+</style>
+</head>
+<body>
+<p id="days"></p>
+<p id="hours"></p>
+<p id="minutes"></p>
+<p id="seconds"></p>
+<script>
+var start = new Date("Aug 16, 2022 05:03:00").getTime();
+var x = setInterval(function() {
+var now = new Date().getTime();
+var t = now - start;
+var days = Math.floor(t / (1000 * 60 * 60 * 24));
+var hours = Math.floor((t%(1000 * 60 * 60 * 24))/(1000 * 60 * 60));
+var minutes = Math.floor((t % (1000 * 60 * 60)) / (1000 * 60));
+var seconds = Math.floor((t % (1000 * 60)) / 1000);
+//document.getElementById("days").innerHTML = days + " दिन " + hours + " घंटे " + minutes + " मिनट " + seconds + " सेकंड ";
+document.getElementById("days").innerHTML = days + " d " + hours + " h " + minutes + " m " + seconds + " s ";
+//document.getElementById("hours").innerHTML = hours + " घंटे ";
+//document.getElementById("minutes").innerHTML = minutes + " मिनट ";
+//document.getElementById("seconds").innerHTML = seconds + " सेकंड ";
+    if (t < 0) {
+        clearInterval(x);
+        document.getElementById("demo").innerHTML = "EXPIRED";
+    }
+}, 1000);
+</script>
+  
+</body>
+</html>
