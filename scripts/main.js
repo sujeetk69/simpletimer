@@ -1,8 +1,8 @@
 console.log("JS Loaded");
-var start = new Date("Sep 13 2022 18:12:00 GMT+0100").getTime();
+var start = new Date("2022/09/13 18:12:00 GMT+0100");
 var x = setInterval(function () {
-    var now = new Date().getTime();
-    var t = now - start;
+    var now = new Date();
+    var t = now.getTime() - start.getTime();
     var days = Math.floor(t / (1000 * 60 * 60 * 24));
     var hours = Math.floor((t % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
     var minutes = Math.floor((t % (1000 * 60 * 60)) / (1000 * 60));
