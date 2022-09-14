@@ -19,7 +19,12 @@ function updateJokeOnUi(jokeText) {
 }
 
 function getRandomJoke() {
-    const url = "https://v2.jokeapi.dev/joke/Any";
+    var url = "https://api.chucknorris.io/jokes/random";;
+    var rand = Math.floor(Math.random() * 100);
+    if (rand % 3 == 0) {
+        // 33% Jokes from here rest from Chuck Norris Endpoint
+        url = "https://v2.jokeapi.dev/joke/Any";
+    }
 
     var xmlHttp = new XMLHttpRequest();
     xmlHttp.onreadystatechange = function () {
@@ -27,7 +32,10 @@ function getRandomJoke() {
             let jokeObj = JSON.parse(xmlHttp.responseText);
             // console.log(jokeObj);
             let jokeText = "";
-            if (jokeObj.type == "single") {
+            if (jokeObj.value) {
+                jokeText = jokeObj.value;
+            }
+            else if (jokeObj.type == "single") {
                 jokeText = jokeObj.joke;
             } else {
                 jokeText = "Q. " + jokeObj.setup + "<br> A. " + jokeObj.delivery;
