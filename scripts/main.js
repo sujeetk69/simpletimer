@@ -1,5 +1,5 @@
 console.log("JS Loaded");
-var start = new Date("Aug 31 2022 17:22:00 GMT+0100").getTime();
+var start = new Date("Sep 13 2022 18:12:00 GMT+0100").getTime();
 var x = setInterval(function () {
     var now = new Date().getTime();
     var t = now - start;
