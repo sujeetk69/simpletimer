@@ -1,5 +1,5 @@
 console.log("JS Loaded");
-var start = new Date("2022/09/13 18:12:00 GMT+0100");
+var start = new Date("2022/09/15 16:17:00 GMT+0100");
 var x = setInterval(function () {
     var now = new Date();
     var t = now.getTime() - start.getTime();
@@ -19,11 +19,11 @@ function updateJokeOnUi(jokeText) {
 }
 
 function getRandomJoke() {
-    var url = "https://api.chucknorris.io/jokes/random";;
+    var url = "https://v2.jokeapi.dev/joke/Any";
     var rand = Math.floor(Math.random() * 100);
-    if (rand % 3 == 0) {
-        // 33% Jokes from here rest from Chuck Norris Endpoint
-        url = "https://v2.jokeapi.dev/joke/Any";
+    if (rand % 5 == 0) {
+        // 20% Jokes from Chuck Norris endpoint
+        url = "https://api.chucknorris.io/jokes/random";
     }
 
     var xmlHttp = new XMLHttpRequest();
