@@ -38,7 +38,7 @@ function getRandomJoke() {
             else if (jokeObj.type == "single") {
                 jokeText = jokeObj.joke;
             } else {
-                jokeText = "Q. " + jokeObj.setup + "<br> A. " + jokeObj.delivery;
+                jokeText = jokeObj.setup + "<br>" + jokeObj.delivery;
             }
             updateJokeOnUi(jokeText);
         }
